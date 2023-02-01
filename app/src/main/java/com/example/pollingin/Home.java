@@ -30,7 +30,29 @@ public class Home extends AppCompatActivity {
 
             }
         });
+        onJoin.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                try {
 
+                    Intent intent = new Intent(Home.this, JoinRoom.class);
+                    intent.putExtra("result","false");
+                    startActivity(intent);
+                } catch (Exception e) {
+                    e.printStackTrace();
+                    Log.e("intent error",e.getMessage());
+                }
+            }
+        });
+        onResult.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent = new Intent(Home.this, JoinRoom.class);
+                intent.putExtra("result","true");
+                startActivity(intent);
+
+            }
+        });
     }
 
 }

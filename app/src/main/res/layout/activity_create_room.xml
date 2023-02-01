@@ -1,69 +1,100 @@
 <?xml version="1.0" encoding="utf-8"?>
-<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
-    xmlns:tools="http://schemas.android.com/tools"
-    android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    android:paddingTop="253dp"
-    tools:context=".CreateRoom">
+<ScrollView
+    xmlns:android="http://schemas.android.com/apk/res/android"
 
-    <EditText
-        android:id="@+id/title"
-        android:layout_width="295dp"
-        android:layout_height="58dp"
-        android:background="@drawable/fill_edit"
-        android:layout_centerHorizontal="true"
-        android:paddingLeft="10dp"
-        android:hint="Masukkan Judul"
-        />
-    <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Options"
-        android:layout_below="@+id/title"
-        android:id="@id/optionTitle"
-        android:layout_centerInParent="true"
-        />
-    <RelativeLayout
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+    <LinearLayout      xmlns:app="http://schemas.android.com/apk/res-auto"
+        xmlns:tools="http://schemas.android.com/tools"
         android:layout_width="match_parent"
-        android:layout_below="@+id/optionTitle"
-        android:gravity="center_horizontal"
-        android:layout_height="wrap_content">
-        <EditText
+        android:layout_height="wrap_content"
+        android:paddingTop="253dp"
+        android:orientation="vertical"
+        android:id="@+id/linearLayout"
+        tools:context=".CreateRoom">
+
+        <!--Title field-->
+        <com.google.android.material.textfield.TextInputLayout
             android:layout_width="295dp"
-            android:layout_height="58dp"
-            android:hint="Option 1 ..."
-            android:textColorHint="@color/black"
-            android:id="@+id/option1"
-            android:paddingLeft="10dp"
-            android:background="@drawable/fill_edit"
-            />
-        <EditText
-            android:layout_width="295dp"
-            android:layout_height="58dp"
-            android:hint="Option 2 ..."
-            android:paddingLeft="10dp"
-            android:textColorHint="@color/black"
-            android:layout_below="@+id/option1"
-            android:background="@drawable/fill_edit"
-            android:id="@+id/option2"
-            />
-        <EditText
-            android:layout_width="295dp"
-            android:layout_height="58dp"
-            android:hint="Option 3 ..."
-            android:paddingLeft="10dp"
-            android:textColorHint="@color/black"
-            android:layout_below="@+id/option2"
-            android:background="@drawable/fill_edit"
-            android:id="@+id/option3"
-            />
+            android:layout_height="80dp"
+            app:boxBackgroundMode="outline"
+            app:helperText="what polling is this about?"
+            style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+            app:boxCornerRadiusTopEnd="10dp"
+            app:boxCornerRadiusBottomEnd="10dp"
+            app:boxCornerRadiusBottomStart="10dp"
+            app:boxCornerRadiusTopStart="10dp"
+            >
+            <com.google.android.material.textfield.TextInputEditText
+                android:layout_width="match_parent"
+                android:layout_height="50dp"
+                android:hint="Title"
+                android:id="@+id/title"/>
+        </com.google.android.material.textfield.TextInputLayout>
         <Button
-            android:layout_width="103dp"
-            android:layout_height="43dp"
-            android:id="@+id/createRoomButton"
-            android:text="Create"
-            android:layout_marginTop="16dp"
-            android:layout_below="@+id/option3"/>
-    </RelativeLayout>
-</RelativeLayout>
+
+            android:id="@+id/add_button"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:onClick="onAddField"
+            android:text="Add+"
+            />
+        <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="20dp"
+            android:id="@+id/parent_linear_layout"
+            android:orientation="vertical" >
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:id="@+id/child"
+                >
+                <com.google.android.material.textfield.TextInputLayout
+                    android:layout_width="295dp"
+                    android:layout_height="58dp"
+                    app:boxBackgroundMode="outline"
+
+                    style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+                    app:boxCornerRadiusTopEnd="10dp"
+                    app:boxCornerRadiusBottomEnd="10dp"
+                    app:boxCornerRadiusBottomStart="10dp"
+                    app:boxCornerRadiusTopStart="10dp"
+                    >
+                    <com.google.android.material.textfield.TextInputEditText
+                        android:layout_width="match_parent"
+                        android:layout_height="50dp"
+                        android:id="@+id/option"
+                        android:hint="Option"
+                        />
+                </com.google.android.material.textfield.TextInputLayout>
+
+
+                <Button
+                    android:id="@+id/delete_button"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+
+                    android:background="@android:drawable/ic_delete"
+                    android:onClick="onDelete"/>
+            </LinearLayout>
+
+        </LinearLayout>
+
+        <Button
+
+            android:id="@+id/create"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:onClick="onCreateRoom"
+            android:backgroundTint="@color/submit"
+            android:text="Create New Room"
+
+            />
+
+
+
+
+
+    </LinearLayout>
+</ScrollView>

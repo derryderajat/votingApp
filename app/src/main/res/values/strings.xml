@@ -1,4 +1,5 @@
 <resources>
     <string name="app_name">pollingin</string>
     <string name="voting_api">https://voting-unsera.vercel.app/api/room</string>
+    <string name="voting_api_local">http://192.168.1.9:8080/api/room</string>
 </resources>
