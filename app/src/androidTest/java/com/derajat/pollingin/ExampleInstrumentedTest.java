@@ -1,4 +1,4 @@
-package com.example.pollingin;
+package com.derajat.pollingin;
 
 import android.content.Context;
 

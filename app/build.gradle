@@ -3,11 +3,11 @@ plugins {
 }
 
 android {
-    namespace 'com.example.pollingin'
+    namespace 'com.derajat.pollingin'
     compileSdk 33
 
     defaultConfig {
-        applicationId "com.example.pollingin"
+        applicationId "com.derajat.pollingin"
         minSdk 23
         targetSdk 32
         versionCode 1

@@ -1,4 +1,4 @@
-package com.example.pollingin;
+package com.derajat.pollingin;
 
 import org.junit.Test;
 
